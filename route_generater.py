@@ -1,19 +1,20 @@
-# Distance of each poins
+# Distance of each points in dictionary format, you need to put your own data here
+# Remember to put a 0 on for the regional point
 G = {1: {1: 0, 2: 3},
-     2: {1: 3, 2: 0, 3: 2, 11: 4},
-     3: {2: 2, 3: 0, 4: 2, },
+     2: {1: 3, 2: 0, 3: 2},
+     3: {2: 2, 3: 0, 4: 2},
      4: {3: 2, 4: 0, 5: 3, 8: 2},
      5: {4: 3, 5: 0, 6: 4},
-     6: {5: 3, 6: 0, 7: 5,12:10},
+     6: {5: 3, 6: 0, 7: 5},
      7: {6: 5, 7: 0},
-     8: {4: 2, 8: 0, 9: 2},
-     9: {8: 2, 9: 0, 10: 4},
+     8: {4: 2, 8: 0},
+     9: {9: 0, 10: 4},
      10: {9: 4, 10: 0, 11: 4},
-     11: {2: 4, 10: 4, 11:0, 13:10},
-     12: {6: 10, 12:0},
-     13: {11: 10, 13:0},
+     11: {10: 4, 11:0},
+     12: {12:0},
+     13: {13:0},
      }
-
+# Convertion list from number to letter
 encode_list = {
     26: "Z",
     25: "Y",
@@ -70,6 +71,7 @@ def Dijkstra(G, v0, INF=999):  # 999 means that the distance from the node to th
                 new = dis[node]
                 current_node = node
     return dis, path
+
 # Generate result to A-Z dictionary
 length_dictionary = len(G)
 for x1 in range(1, length_dictionary+1):
